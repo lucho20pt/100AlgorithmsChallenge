@@ -14,7 +14,7 @@ const agesSpread = [...ages].sort((a, b) => a - b)
 ages === agesSpread
 
 // using Array from copy ages and sort ascending
-const agesArrayFrom = Array.from(ages).sort((a, b) => a - b);
+const agesArrayFrom = Array.from(ages).sort((a, b) => a - b)
 // agesArrayFrom
 ages === agesArrayFrom
 
@@ -24,3 +24,12 @@ a.sort((a, b) => a - b)
 a === ages
 // a
 // ages
+
+// DEEP COPY ARR
+const obj = { a: { b: { c: 99 } } }
+// let cloneObj = {...obj2} // shallow copy
+const cloneObj = JSON.parse(JSON.stringify(obj)) // deep copy
+
+cloneObj.a.b.c = 88
+cloneObj.a.b.c // return cloneObj c{88}
+obj.a.b.c // return Obj2 still c{99}
